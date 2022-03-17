@@ -1,0 +1,71 @@
+body{
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+label{
+    font-weight: 500;
+}
+.figura_geometrica{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.figura_geometrica div {
+    width: 35%;
+    height: auto;
+  }
+
+input[type=number], select {
+    width: 100%;
+    padding: 8px 10px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid rgb(211, 211, 211);
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 15px;
+  }
+  
+  input[type=button] {
+    width: 100%;
+    background-color: hsl(167, 39%, 49%);
+    color: white;
+    padding: 14px 20px;
+    margin: 40px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 22px !important;
+  }
+  
+  input[type=button]:hover {
+    background-color: hsl(171, 57%, 29%);
+    font-size: 26px;
+  }
+  
+  div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    font-size: 15px;
+  }
+
+  /*Alinear los inputs en columnas*/
+  .twit-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    margin: -10px 0 0px -10px;
+    position: relative;
+  }
+  
+  .twit {
+    display: inline-block;
+    padding: 20px;
+    width: 100px;
+    height: auto;
+    margin: 10px 0 0 1%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    flex-grow: 1;
+    outline: 1px solid rgb(175, 32, 32);
+  }
