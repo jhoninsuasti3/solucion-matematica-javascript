@@ -69,3 +69,12 @@ input[type=number], select {
     flex-grow: 1;
     outline: 1px solid rgb(175, 32, 32);
   }
+
+  /* Estilos para agregar validaciones*/
+  input.invalido {
+    border-color: red;
+  }
+
+  span{
+      color: red;
+  }

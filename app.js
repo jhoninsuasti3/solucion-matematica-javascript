@@ -1,35 +1,66 @@
 var boton = document.getElementById("btn_calcula");
 var inputs = ['cprimero','csegundo','ctercero','ccuarto','cquinto','csexto','cseptimo','minimo','maximo','avance'] ;
+var span = ['primeralertaerror','segundoalertaerror','terceralertaerror','cuartoalertaerror','quintoalertaerror','sextoalertaerror','septimoalertaerror','minimoalertaerror','maximoalertaerror','avancealertaerror']
 var val_campos = [];
 
 // Ejecutando el llamado al flujo del programa
-
 boton.addEventListener('click',() => {    
     obtenerValores();  
 });
 
-/*Operando el obtener valores dinamicamente*/ 
+
+/*Operando el obtener valores dinamicamente y validando que se diligencien meniante Js*/
+// Se hicieron estas validaciones por javascript ya que no necesitaba que se recargue la pagina
+// Y aun debo practicar mas con el htmlrequest
+
 function obtenerValores(){
-    
-        inputs.forEach(function(item){
-            console.log(item);
-            inserta = valorobtenido = document.getElementById(item).value;
-            val_campos.push(inserta);
-            //console.log(inserta);
+    //Vaciar la lista de arreglos en caso de volverse a ejecutar la funcion 
+    val_campos = [];
+    validador = false;
+        inputs.forEach(function(item, contador){
+            console.log("El item a procesar es : "+ item + " su contador es: " + contador);
+            identificador = document.getElementById(item);
+            inserta  = document.getElementById(item).value;
+            nombre  = document.getElementById(item).name;
+            id_error =  span[contador]; 
+            console.log("Imprimiendo el nombre del id " + id_error) ; 
+            if( inserta == null || inserta.length == 0  ) {
+                document.getElementById(id_error).style.visibility = 'visible';
+                //alert('[ERROR] El campo' + nombre + ' debe tener un valor...');
+                identificador.classList.add("invalido");
+                return false;
+            }else{
+                document.getElementById(id_error).style.visibility = 'hidden';
+                identificador.classList.remove("invalido");
+                console.log("El valor obtenido en el campo " + nombre + " es " + inserta + " y sera insertado");
+                val_campos.push(inserta);
+                if(contador == 9 && nombre =="avance"){
+                    validador = true;
+                }
+            }
         });
-        escribirResultado();
+        if(validador){
+            escribirResultado();
+            return true;
+        }
 }
 
 function escribirResultado(){
        
         console.log("Escribiendo el resultado");
-        val_campos.forEach((item, i) => {
-            console.log(i);
+        //copiado de array a otro
+        var arr = val_campos.slice();
+        
+
+        
+        arr.forEach((item, i) => {
+            console.log(item);
             //alert(item)
-            var hola = item + 'test' + i;
-            document.getElementById('demo').innerHTML = hola;
-            //document.getElementById("demo").innerHTML = item;
+            //document.getElementById('demo').innerHTML = item;
         });
+        
+
+        resultadoEcuacion(arr[0],arr[1],arr[2],arr[3],arr[4],arr[5],arr[6]);
 }
 /*
 
@@ -43,6 +74,9 @@ function operarValores(valor){
 */
 function resultadoEcuacion(a,b,c,d,e,f,g){
 
+    console.table(a,b,c,d,e,f,g);
+    
+
     var expresion_una = (Math.sqrt(
                                     (1**a) + ((g * f )/(2)) - (-Math.cos(c * a))
                         ));
@@ -53,8 +87,9 @@ function resultadoEcuacion(a,b,c,d,e,f,g){
     var expresion_tres = (Math.sqrt(
                                     (a**(2-d))+e*a
                         ));
-    
-    return  resul_ecuacion =     (((expresion_una)/(expresion_dos))+expresion_tres)                               
+    resul_ecuacion =     (((expresion_una)/(expresion_dos))+expresion_tres) ;
+    console.log("El resultado de la ecuacion es + " );
+    return  resul_ecuacion =  (((expresion_una)/(expresion_dos))+expresion_tres)                               
 }
 
 /************************ 

@@ -49,39 +49,78 @@
                 </div>
                 
                 <div>
-                    <form action="" class="twit-container">
+                    <form action="" class="twit-container" onsubmit="return validacion()"">
                         
                     <div class="twit">
-                        <label for="fname">Primer coeficiente - a</label>
-                        <input type="number" id="cprimero" name="firstname" placeholder="Digite aqui..">
+                        <label for="fname">Primer coeficiente - a </label>
+                        <span role="alert" id="primeralertaerror" style="visibility:hidden;">
+                            ( Valor requerido )
+                        </span>
+                        <input type="number" id="cprimero" name="Primer coeficiente"  placeholder="Digite aqui.." >
+                        
                         <label for="lname">Segundo coeficiente - b</label>
-                        <input type="number" id="csegundo" name="lastname" placeholder="Digite aquí ..">
+                        <span role="alert" id="segundoalertaerror" style="visibility:hidden;">
+                            ( Valor requerido )
+                        </span>
+                        <input type="number" id="csegundo" name="Segundo coeficiente" placeholder="Digite aquí .." required>
+                        
                         <label for="fname">Tercer coeficiente - c</label>
-                        <input type="number" id="ctercero" name="firstname" placeholder="Digite aquí..">
+                        <span role="alert" id="terceralertaerror" style="visibility:hidden;">
+                            ( Valor requerido )
+                        </span>
+                        <input type="number" id="ctercero" name="Tercer coeficiente" placeholder="Digite aquí.." required>
+                        
                         <label for="lname">Cuarto coeficiente - d</label>
-                        <input type="number" id="ccuarto" name="lastname" placeholder="Digite aquí ..">
+                        <span role="alert" id="cuartoalertaerror" style="visibility:hidden;">
+                            ( Valor requerido )
+                        </span>
+                        <input type="number" id="ccuarto" name="Cuarto coeficiente" placeholder="Digite aquí ..">
+
                         <label for="fname">Quinto coeficiente -e </label>
-                        <input type="number" id="cquinto" name="firstname" placeholder="Digite aquí ..">
+                        <span role="alert" id="quintoalertaerror" style="visibility:hidden;">
+                            ( Valor requerido )
+                        </span>
+                        <input type="number" id="cquinto" name="Quinto coeficiente" placeholder="Digite aquí .." required>
+                        
                         <label for="lname">Sexto coeficiente - f</label>
-                        <input type="number" id="csexto" name="lastname" placeholder="Digite aquí ..">
+                        <span role="alert" id="sextoalertaerror" style="visibility:hidden;">
+                            ( Valor requerido )
+                        </span>
+                        <input type="number" id="csexto" name="Sexto coeficiente" placeholder="Digite aquí .." required>
+                        
                         <label for="lname">Septimo coeficiente - g</label>
-                        <input type="number" id="cseptimo" name="lastname" placeholder="Digite aquí ..">
+                        <span role="alert" id="septimoalertaerror" style="visibility:hidden;">
+                            ( Valor requerido )
+                        </span>
+                        <input type="number" id="cseptimo" name="Septimo coeficiente" placeholder="Digite aquí .." required>
                     </div>
                     <div class="twit">
                         <label for="fname">Xminimo</label>
-                        <input type="number" id="minimo" name="firstname" placeholder="Digite aquí..">
+                        <span role="alert" id="minimoalertaerror" style="visibility:hidden;">
+                            ( Valor requerido )
+                        </span>
+                        <input type="number" id="minimo" name="xminimo" placeholder="Digite aquí.." required>
                         <label for="lname">Xmaximo</label>
-                        <input type="number" id="maximo" name="lastname" placeholder="Digite aquí ..">
+                        <span role="alert" id="maximoalertaerror" style="visibility:hidden;">
+                            ( Valor requerido )
+                        </span>
+                        <input type="number" id="maximo" name="xmaximo" placeholder="Digite aquí .." required>
                         <label for="lname">Avance</label>
-                        <input type="number" id="avance" name="lastname" placeholder="Digite aquí ..">
+                        <span role="alert" id="avancealertaerror" style="visibility:hidden;">
+                            ( Valor requerido )
+                        </span>
+                        <input type="number" id="avance" name="avance" placeholder="Digite aquí .." required>
                         
                     </div>
-                    
-                    <input type="button" value="Calcular" id="btn_calcula">
+                  
+                        <input type="button" value="Calcular" id="btn_calcula">
+                   
                     </form>
                 </div>
               <div id="">
+                  <h1>Reultado Grafico :</h1>
                   <p id="demo">Aqui</p>
+                  <canvas width="300" height="300" id="dibujito"></canvas>
               </div>
         </main>
     </div>
