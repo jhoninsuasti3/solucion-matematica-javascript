@@ -10,14 +10,14 @@ label{
   justify-content: center;
 }
 .figura_geometrica div {
-    width: 35%;
+    width: 25%;
     height: auto;
   }
 
 input[type=number], select {
     width: 100%;
     padding: 8px 10px;
-    margin: 5px 0;
+    margin: 2px 0;
     display: inline-block;
     border: 1px solid rgb(211, 211, 211);
     border-radius: 4px;
@@ -29,7 +29,7 @@ input[type=number], select {
     width: 100%;
     background-color: hsl(167, 39%, 49%);
     color: white;
-    padding: 14px 20px;
+    padding: 10px 15px;
     margin: 40px 0;
     border: none;
     border-radius: 4px;
@@ -77,4 +77,27 @@ input[type=number], select {
 
   span{
       color: red;
+  }
+
+  #customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 30%;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
   }
